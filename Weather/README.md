@@ -4,8 +4,6 @@
 
 A simple, responsive web application that allows users to search for current weather information by city name. Built with vanilla HTML, CSS, and JavaScript, it fetches data from the OpenWeatherMap API and displays temperature, humidity, wind speed, and weather conditions.
 
-![Screenshot](screenshot.png) <!-- Add a screenshot if available -->
-
 Live demo: [https://weatherapplication-sooty.vercel.app/](https://weatherapplication-sooty.vercel.app/)
 
 ## Features
