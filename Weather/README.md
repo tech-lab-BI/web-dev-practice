@@ -109,4 +109,4 @@ MIT License - feel free to use and modify!
 
 ---
 
-**Built with ❤️ using OpenWeatherMap API**
+**Built with ❤️ Bikram**
