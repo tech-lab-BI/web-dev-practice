@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Project : Calculator</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+    <p>Here's your calculator :</p> <br>
+    <div id="body">
+        <div id="display"></div>
+        <div id="function">
+            <div class="button" onclick="
+                value = '0';
+                document.querySelector('#display').innerText = value;
+            ">C</div> <!--use button tag -->
+            <div class="button" onclick="
+                value += '+';
+                document.querySelector('#display').innerText = value;
+            ">+</div>
+            <div class="button" onclick="
+                value += '-';
+                document.querySelector('#display').innerText = value;
+            ">-</div>
+            <div class="button" onclick="
+                value += '*';
+                document.querySelector('#display').innerText = value;
+            ">*</div>
+            <div class="button" onclick="
+                value += '/';
+                document.querySelector('#display').innerText = value;
+            ">/</div>
+            <div class="button" onclick="
+                value = eval(value);
+                document.querySelector('#display').innerText = value;
+            ">=</div>
+        </div>
+        <div id="numbers">
+            <div class="button" onclick="
+                value += '1';
+                document.querySelector('#display').innerText = value;
+            ">1</div>
+            <div class="button" onclick="
+                value += '2';
+                document.querySelector('#display').innerText = value;
+            ">2</div>
+            <div class="button" onclick="
+                value += '3';
+                document.querySelector('#display').innerText = value;
+            ">3</div>
+            <div class="button" onclick="
+                value += '4';
+                document.querySelector('#display').innerText = value;
+            ">4</div>
+            <div class="button" onclick="
+                value += '5';
+                document.querySelector('#display').innerText = value;
+            ">5</div>
+            <div class="button" onclick="
+                value += '6';
+                document.querySelector('#display').innerText = value;
+            ">6</div>
+            <div class="button" onclick="
+                value += '7';
+                document.querySelector('#display').innerText = value;
+            ">7</div>
+            <div class="button" onclick="
+                value += '8';
+                document.querySelector('#display').innerText = value;
+            ">8</div>
+            <div class="button" onclick="
+                value += '9';
+                document.querySelector('#display').innerText = value;
+            ">9</div>
+            <div class="button" onclick="
+                value += '0';
+                document.querySelector('#display').innerText = value;
+            ">0</div>
+            <div class="button" onclick="
+                value += '.';
+                document.querySelector('#display').innerText = value;
+            ">.</div>
+        </div>
+    </div>
+<script>
+    let value = '';//work as a string , global
+</script>
+</body>
+</html>

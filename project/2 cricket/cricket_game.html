@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cricket Game</title>
+    <style>
+        body {
+            text-align: center;
+
+            height: 500px;
+            background-image: url(images/cricket-background.jpg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            background-color: rgb(240, 241, 246);
+        }
+        img {
+            width: 100px;
+            height: 120px;
+            margin: 10px;
+        }
+        button {
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cricket Game</h1>
+    <button onclick="
+        updateScore('Bat');
+        display();
+    "><img src="images/bat.jpg"></button>
+
+    <button onclick="
+        updateScore('Ball');
+        display();
+    "><img src="images/ball.webp"></button>
+
+    <button onclick="
+        updateScore('Wicket');
+        display();
+    "><img src="images/wicket.jpg"></button>
+
+    <button onclick="
+        score.win=score.lost=score.draw=0;
+        localStorage.setItem('score',JSON.stringify(score));//if score already exist make change it
+        display();
+    "><img src="images/reset.webp"></button>
+    
+    <h4 id="win-result">Match Yet to Begin, choose option</h4>
+    <h4 id="loss-result"></h4>
+    <h4 id="draw-result"></h4>
+    <p>open console for check comparism</p>
+
+<script>
+    let score = JSON.parse(localStorage.getItem('score')) || {
+        win : 0,
+        lost : 0,
+        draw : 0,
+    };
+    let alertMessage = "You have not choose yet!!";
+    function genarateChioce(){
+        number_chioce = Math.random() * 3;
+        if(number_chioce <= 1){
+            ch = 'Bat'; // default intialize without let / const / var
+        } else if(number_chioce <= 2){
+            ch = 'Wicket';
+        } else{
+            ch = 'Ball';
+        }
+        return ch;
+    }
+
+    function updateScore(u){
+        let c = genarateChioce();
+        console.log(`User choose : ${u}`);
+        console.log(`Computer choose : ${c}`);
+        let printMessage;
+        if(u === c){
+            printMessage = 'Match Draw !!!';
+            score.draw++;
+        } else if((u === 'Bat' && c === 'Ball') || (u === 'Ball' && c === 'Wicket') || (u === 'Wicket' && c === 'Bat')){
+            printMessage = 'User Win !!!';
+            score.win++;
+        } else {
+            printMessage = 'Computer Win !!!';
+            score.lost++;
+        }
+        localStorage.setItem('score', JSON.stringify(score));
+    }
+
+    function display(){
+        let s = JSON.parse(localStorage.getItem('score'));
+        document.querySelector('#win-result').innerText = `User Win ${s.win} times.`;
+        document.querySelector('#loss-result').innerText = `User loss ${s.lost} times.`;
+        document.querySelector('#draw-result').innerText = `Match Draw ${s.draw} times.`;
+    }
+    
+    // localStorage.clear();
+</script>
+</body>
+</html>
