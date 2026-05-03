@@ -1,0 +1,20 @@
+*{
+    padding: 1%;
+    margin: 1%;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: blanchedalmond;
+}
+h1 {
+    font-size: 300%;
+}
+header {
+    background-color: aliceblue;
+    text-align: center;
+}
+footer {
+    background-color: aqua;
+    text-align: center;
+}
+.button:hover {
+    background-color: blueviolet;
+}
